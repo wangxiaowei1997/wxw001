@@ -7,6 +7,6 @@ RUN pip install  shadowsocks
 COPY shadowsocks.json  /etc
 
 
-ENTRYPOINT [ "/usr/local/bin/ssserver -c /etc/shadowsocks.json" ]
+ENTRYPOINT [ "/usr/local/bin/ssserver", "-c", "/etc/shadowsocks.json" ]
 
 
