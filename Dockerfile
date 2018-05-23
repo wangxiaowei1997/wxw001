@@ -3,6 +3,9 @@ ADD sources.list /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get -y install python-pip 
 RUN pip install  shadowsocks 
+
+COPY shadowsocks.json.example /etc
+
 ENTRYPOINT ["bash", "./entry.sh"]
 ENTRYPOINT [ "/usr/local/bin/ssserver -c /etc/shadowsocks.json" ]
 
